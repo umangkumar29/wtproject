@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEBPAGE DESIGN</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="myScript1.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar background">
+      <ul class="nav-list">
+        <div class="logo">
+          <img class="icon" src="images/java.png" alt="" />
+        </div>
+        <li><a href="#web">Throws keyword</a></li>
+        <li><a href="#program">Syntax</a></li>
+        <li><a href="#course">Example</a></li>
+      </ul>
+
+      <div class="rightNav">
+        <input type="text" name="search" id="search" />
+        <button class="btn btn-sm">Search</button>
+      </div>
+    </nav>
+
+    <section class="firstsection">
+      <div class="box-main">
+        <div class="firstHalf">
+          <h1 class="text-big" id="web"><u>Throws keyword</u></h1>
+          <p class="text-small">
+            The Java throws keyword is used to declare an exception. It gives an
+            information to the programmer that there may occur an exception. So,
+            it is better for the programmer to provide the exception handling
+            code so that the normal flow of the program can be maintained.
+            Exception Handling is mainly used to handle the checked exceptions.
+            If there occurs any unchecked exception such as
+            NullPointerException, it is programmers' fault that he is not
+            checking the code before it being used.
+          </p>
+
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-item-header">Syntax</div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  return_type method_name()
+                  <b>throws</b> exception_class_name{<br />
+                  //method code <br />
+                  }
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Which exception should be declared?
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  Ans: Checked exception only, because:
+                  <li>
+                    <b>unchecked exception:</b> under our control so we can
+                    correct our code.
+                  </li>
+                  <li>
+                    <b>error:</b> beyond our control. For example, we are unable
+                    to do anything if there occurs VirtualMachineError or
+                    StackOverflowError.
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-item-header">
+                Advantage of Java throws keyword
+              </div>
+              <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                  <li>
+                    Now Checked Exception can be propagated (forwarded in call
+                    stack).
+                  </li>
+                  <li>
+                    It provides information to the caller of the method about
+                    the exception.
+                  </li>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin: left 30px" class="card-body">
+              <h5 class="card-title">Example-1</h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                //Java Program to illustrate the use of throws
+              </h6>
+            </div>
+            <div class="card" style="width: 60rem">
+              <div style="margin-left: -40px" class="card-body">
+                <pre class="lead"><br>
+                Testthrows2.java
+
+                import java.io.*;  
+                class M{  
+                 void method()throws IOException{  
+                  throw new IOException("device error");  
+                 }  
+                }  
+                public class Testthrows2{  
+                   public static void main(String args[]){  
+                    try{  
+                     M m=new M();  
+                     m.method();  
+                    }catch(Exception e){System.out.println("exception handled");}     
+                  
+                    System.out.println("normal flow...");  
+                  }  
+                }  
+                <br>
+                <b><u>OUTPUT</u></b>
+                </pre>
+                <div class="ex">
+                  <img class="output" src="images/output.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h1 class="text-big" id="web"><u>Cases:-</u></h1>
+          <p class="text-small">
+            There are two cases:
+            <br /><br />
+            Case 1: We have caught the exception i.e. we have handled the
+            exception using try/catch block.<br />
+            Case 2: We have declared the exception i.e. specified throws keyword
+            with the method<br /><br />
+
+            So, we will see an example of case-2<br>
+          </p>
+
+          <h4 class="text-big" id="web"><u>Case 2: Declare Exception</u></h4>
+          <p class="text-small">
+            -> In case we declare the exception, if exception does not occur,
+            the code will be executed fine.<br />
+            -> In case we declare the exception and the exception occurs, it
+            will be thrown at runtime because throws does not handle the
+            exception.
+            <br /><br />
+            <u>Let's see examples for both the scenario.</u>
+            <br /><br ><br>
+            <i><b><u>A) If exception does not occur</u></b></i>
+          </p>
+
+          <div style="margin: left 30px" class="card-body">
+            <h5 class="card-title">Example-3</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              Testthrows3.java
+            </h6>
+          </div>
+          <div class="card" style="width: 60rem">
+            <div style="margin-left: -40px" class="card-body">
+              <pre class="lead"><br>
+              import java.io.*;  
+              class M{  
+              void method()throws IOException{  
+              System.out.println("device operation performed");  
+                }  
+              }  
+              class Testthrows3{  
+                 public static void main(String args[])throws IOException
+                 {//declare exception  
+                      M m=new M();  
+                      m.method();  
+              System.out.println("normal flow...");  
+                }  
+              }   
+                <b><u>OUTPUT</u></b>
+                </pre>
+              <div class="ex2">
+                <img class="output" src="images/output2.png" alt="" />
+              </div>
+            </div>
+          </div>
+        <br><br><br><br>
+          <p class="text-small">
+            <i><b><u>B) If exception occurs</u></b></i>
+          </p>
+     
+
+
+
+        <div style="margin: left 30px" class="card-body">
+          <h5 class="card-title">Example-4</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Testthrows4.java
+          </h6>
+        </div>
+        <div class="card" style="width: 60rem">
+          <div style="margin-left: -40px" class="card-body">
+            <pre class="lead"><br>
+              import java.io.*;  
+              class M{  
+               void method()throws IOException{  
+                throw new IOException("device error");  
+               }  
+              }  
+              class Testthrows4{  
+                 public static void main(String args[])throws IOException
+                 {//declare exception  
+                   M m=new M();  
+                   m.method();  
+                
+                  System.out.println("normal flow...");  
+                }  
+              }     
+              <b><u>OUTPUT</u></b>
+              </pre>
+            <div class="ex3">
+              <img class="output" src="images/output3.png" alt="" />
+            </div>
+          </div>
+        </div>
+      
+<br><br>
+        <div class="card-footer text-muted">
+          <b>UMANG KUMAR, 2029120</b> <br>
+           GROUP_11
+       </div>
+      </div>
+    </section>
+  </body>
+</html>
